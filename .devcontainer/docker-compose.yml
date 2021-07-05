@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+  test:
+    build:
+      context: ../
+      dockerfile: ./.devcontainer/Dockerfile
+    ports:
+      - 64200:64200
+    volumes:
+      - ../..:/workspaces
+    init: true
+    command: sleep infinity
