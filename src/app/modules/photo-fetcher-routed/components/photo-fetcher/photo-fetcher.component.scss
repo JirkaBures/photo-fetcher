@@ -1,0 +1,52 @@
+.container {
+    max-width: 750px;
+    margin: auto;
+
+    .control-panel {
+        padding: 16px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .gallery {
+        margin: -8px;
+        &.grayscale {
+            filter: grayscale(100%);
+        }
+    }
+
+    .item {
+        width: calc(50% - 16px);
+        margin: 8px;
+        @media (max-width: 425px) {
+            width: 100%;
+            margin: 8px 0;
+        }
+        height: 266px;
+        float: left;
+        display: flex;
+        background-color: gray;
+        position: relative;
+
+        .label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: black;
+            color: white;
+            opacity: 0.75;
+            height: 42px;
+            padding: 16px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        img {
+            object-fit: cover;
+            width: 100%;
+            max-height: 100%;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+<div class="container">
+    <h1>Photo Fetcher</h1>
+
+    <div class="control-panel">
+        <mat-slide-toggle (click)="toggleGrayscale()">Make photos grayscale</mat-slide-toggle>
+        <button mat-raised-button color="primary" (click)="getFourRandomItems()">Fetch New Photos</button>
+    </div>
+    
+    <div class="gallery" [class.grayscale]="isGray">
+        <a class="item" *ngFor="let item of items;" target="_blank" href="https://aukro.cz/{{item.seoUrl}}-{{item.id}}">
+            <div class="label">
+                <span>{{item.name}}</span>
+                <br>
+                <small>http://aukro.cz/{{item.seoUrl}}</small>
+            </div>
+            <img [src]="item.images.lists.medium[0].url">
+        </a>
+    </div>
+</div>
